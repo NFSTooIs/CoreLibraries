@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>NFSTools.Core.IO</PackageId>
+    <Authors>heyitsleo/NFSTools</Authors>
+    <Company>NFSTools</Company>
+    <Product>NFSTools Core - IO Extensions</Product>
+    <Platforms>x86</Platforms>
+    <Version>1.0.3</Version>
+  </PropertyGroup>
+</Project>
