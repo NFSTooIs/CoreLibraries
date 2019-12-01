@@ -12,8 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NFSTools.Core.GameUtilities" Version="1.0.2" />
     <PackageReference Include="System.ComponentModel.Composition" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLibraries.GameUtilities\CoreLibraries.GameUtilities.csproj" />
   </ItemGroup>
 
 </Project>
