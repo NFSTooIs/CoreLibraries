@@ -2,14 +2,19 @@
 // 
 // Created: 10/07/2019 @ 7:27 PM.
 
+using System.Globalization;
 using System.Text;
 
 namespace CoreLibraries.GameUtilities
 {
     public static class VLT64Hasher
     {
-        public static ulong Hash(string str, ulong init = 0xABCDEF0011223344)
+        public static ulong Hash(string str, ulong init = 0xABCDEF0011223344, bool returnZeroForEmpty = true)
         {
+            if (string.IsNullOrEmpty(str) && (str == null || returnZeroForEmpty))
+                return 0;
+            if (str.StartsWith("0x") && uint.TryParse(str.Substring(2), NumberStyles.AllowHexSpecifier, CultureInfo.CurrentCulture, out uint u))
+                return u;
             byte[] data = Encoding.ASCII.GetBytes(str);
             var bytesProcessed = (uint)str.Length;
             var mixVar1 = (ulong)bytesProcessed;

@@ -9,6 +9,6 @@
     <Company>NFSTools</Company>
     <Product>NFSTools Core - Game Utilities</Product>
     <Platforms>x86</Platforms>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 </Project>
