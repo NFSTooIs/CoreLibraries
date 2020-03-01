@@ -18,4 +18,4 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release /p:Platform="x86" -o finalpackage --no-build
     - name: Push to NuGet
-      run: for f in finalpackage/*.nupkg; do dotnet nuget push "$f" -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org; done
+      run: for f in finalpackage/*.nupkg; do dotnet nuget push "$f" --skip-duplicate -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org; done
