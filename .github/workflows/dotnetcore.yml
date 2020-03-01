@@ -17,10 +17,5 @@ jobs:
       run: dotnet build --configuration Release /p:Platform="x86"
     - name: Pack
       run: dotnet pack --configuration Release /p:Platform="x86" -o finalpackage --no-build
-    - name: Publish artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: nupkg
-        path: finalpackage
     - name: Push to NuGet
-      run: dotnet nuget push nupkg/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org
+      run: dotnet nuget push finalpackage/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org
